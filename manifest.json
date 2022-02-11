@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+  "name": "Flip Clip",
+  "version": "1.0.0",
+  "description": "A quick option for making flashcards from a web page ",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+
+  "permissions": ["notifications", "storage", "contextMenus"]
+}
