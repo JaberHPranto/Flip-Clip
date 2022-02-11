@@ -4,3 +4,8 @@ html {
   width: 300px;
   height: 500px;
 }
+
+body iframe {
+  margin-left: 3rem;
+  display: inline-block;
+}

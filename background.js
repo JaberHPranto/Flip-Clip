@@ -27,10 +27,10 @@ chrome.contextMenus.onClicked.addListener(function (clickedData) {
         itemId: clickedData?.menuItemId,
         text: clickedData?.selectionText,
         pageUrl: clickedData?.pageUrl,
-      },
-      function (response) {
-        console.log("kok");
       }
+      //   function (response) {
+      //     console.log("kok");
+      //   }
     );
   });
 });
