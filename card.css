@@ -7,16 +7,16 @@ body {
   justify-content: center;
   flex-direction: column;
   position: relative;
-  z-index: 99999 !important
-  ;
+  z-index: 99999 !important;
 }
 
 .container {
-  /* background-color: yellow !important; */
   height: 100%;
   width: 100%;
   z-index: 99999 !important;
   position: relative;
+  outline: none;
+  border: none;
 }
 
 /* Form */
@@ -47,22 +47,10 @@ textarea {
   margin-top: 4rem !important;
   background-color: #80a8d2;
   color: white;
+  border-width: 0;
+  border-radius: 5px;
 }
 
-.feedback-card {
-  border: 1px solid black;
-  max-width: 980px;
-  background-color: #fff;
-  margin: 0 auto;
-  box-shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
-}
-.feedback-header {
-  text-align: center;
-  padding: 8px;
-  font-size: 14px;
-  font-weight: 700;
-  border-bottom: 1px solid black;
-}
 .feedback-body {
   padding: 20px;
   display: flex;
