@@ -21,10 +21,10 @@ function showNewCard() {
   iFrame.style.position = "fixed";
   iFrame.style.margin = "auto auto";
   iFrame.style.zIndex = "999999";
-  iFrame.style.top = "0";
-  iFrame.style.left = "0";
-  iFrame.style.right = "0";
-  iFrame.style.bottom = "50";
+  // iFrame.style.top = "0";
+  // iFrame.style.left = "0";
+  // iFrame.style.right = "0";
+  // iFrame.style.bottom = "50";
 
   document.body.insertBefore(iFrame, document.body.firstChild);
 }

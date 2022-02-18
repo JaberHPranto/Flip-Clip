@@ -1,60 +1,94 @@
-/* body {
+body {
   font-family: "Roboto", sans-serif;
   padding: 0;
   margin: 0;
-  background-color: #d32e2e;
-  height: 100vh;
-  width: 100%;
+  background-color: #ebf2f8;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   position: relative;
   z-index: 99999 !important
   ;
-} */
+}
 
 .container {
-  background-color: yellow;
+  /* background-color: yellow !important; */
   height: 100%;
   width: 100%;
   z-index: 99999 !important;
+  position: relative;
 }
-.cookiesContent {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 320px;
+
+/* Form */
+input,
+textarea {
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  background-image: none;
+  background-color: #fdfcfa;
+  box-shadow: none;
+  padding: 5px;
+}
+input:focus,
+button:focus,
+textarea:focus {
+  outline: none;
+}
+
+textarea {
+  min-height: 50px;
+  resize: vertical;
+}
+
+.feedback-body__submit {
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  padding: 8px 8px !important;
+  margin-top: 4rem !important;
+  background-color: #80a8d2;
+  color: white;
+}
+
+.feedback-card {
+  border: 1px solid black;
+  max-width: 980px;
+  background-color: #fff;
+  margin: 0 auto;
+  box-shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
+}
+.feedback-header {
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 1px solid black;
+}
+.feedback-body {
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: rgb(78, 109, 220);
-  color: #000;
-  text-align: center;
-  border-radius: 20px;
-  padding: 30px 30px 70px;
-  z-index: 999999;
 }
-.cookiesContent button.close {
-  width: 30px;
-  font-size: 20px;
-  color: #c0c5cb;
+.feedback-body__message {
+  margin-top: 10px;
+}
+.feedback-body button {
+  margin-top: 10px;
   align-self: flex-end;
-  background-color: transparent;
-  border: none;
-  margin-bottom: 10px;
 }
-.cookiesContent img {
-  width: 82px;
-  margin-bottom: 15px;
+
+.qna {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
-.cookiesContent p {
-  margin-bottom: 40px;
-  font-size: 18px;
+.qna textarea {
+  margin-top: -0.5rem;
 }
-.cookiesContent button.accept {
-  background-color: #ed6755;
-  border: none;
-  border-radius: 5px;
-  width: 200px;
-  padding: 14px;
-  font-size: 16px;
-  color: white;
-  box-shadow: 0px 6px 18px -5px #ed6755;
+
+.cancelIcon img {
+  width: 15px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
 }
