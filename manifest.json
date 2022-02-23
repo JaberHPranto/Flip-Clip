@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "A quick option for making flashcards from a web page ",
   "browser_action": {
-    "default_popup": "popup.html"
+    "default_popup": "html/popup.html"
   },
   "background": {
     "scripts": ["background.js"]
@@ -15,6 +15,6 @@
       "js": ["jQuery.js", "content.js"]
     }
   ],
-  "web_accessible_resources": ["newCardModal.html"],
+  "web_accessible_resources": ["html/newCardModal.html"],
   "permissions": ["activeTab", "tabs", "storage", "contextMenus"]
 }

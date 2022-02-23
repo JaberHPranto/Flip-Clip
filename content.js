@@ -13,7 +13,7 @@ $(document).ready(function () {
 
   function showNewCard() {
     let iFrame = document.createElement("iframe");
-    iFrame.src = chrome.runtime.getURL("newCardModal.html");
+    iFrame.src = chrome.runtime.getURL("html/newCardModal.html");
     iFrame.id = "newCardFrame";
     iFrame.style.height = "400px";
     iFrame.style.width = "420px";

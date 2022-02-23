@@ -1,5 +1,3 @@
-$(function () {
-  $("#btn").click(function () {
-    console.log("Clicked 😄");
-  });
+$(document).ready(function () {
+  $("#sessionStartBtn").click(function () {});
 });
