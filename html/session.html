@@ -11,15 +11,30 @@
     <div class="container">
       <div class="row" id="midrow">
         <div class="flip-container" id="flashcard">
+          <button class="flag">
+            <img src="../images/xmark-solid.svg" width="13px" />
+          </button>
           <div class="flipper">
             <div class="front">
-              <span id="flashcard--content_en">almonds</span>
-              <button class="flag">
-                <i class="fa fa-flag" aria-hidden="true"></i>
-              </button>
+              <div class="cardFront">
+                <span id="flashcard--content_en">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                  perspiciatis totam atque esse, minima
+                </span>
+              </div>
+              <div class="front-card-btn">
+                <button>I Forget 🤔</button>
+                <button>I Know 🥳</button>
+              </div>
             </div>
             <div class="back">
-              <span id="flashcard--content_es">This is not almonds</span>
+              <div class="cardBack">
+                <span id="flashcard--content_es">This is not almonds</span>
+              </div>
+              <div class="front-card-btn">
+                <button>Incorrect</button>
+                <button>Correct</button>
+              </div>
             </div>
           </div>
         </div>

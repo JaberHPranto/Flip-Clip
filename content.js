@@ -8,6 +8,8 @@ $(document).ready(function () {
       $("#newCardFrame").remove();
     } else if (message.action === "START_SESSION") {
       startNewSession();
+    } else if (message.action === "END_SESSION") {
+      $("#sessionFrame").remove();
     }
 
     return true;
@@ -43,8 +45,8 @@ $(document).ready(function () {
     iFrame.style.display = "flex";
     iFrame.style.justifyContent = "center";
     iFrame.style.alignItems = "center";
-    iFrame.style.backgroundColor = "#C9DAEC";
-    iFrame.style.opacity = 0.97;
+    iFrame.style.backgroundColor = "#E0EAF4";
+    iFrame.style.opacity = 0.98;
     iFrame.style.zIndex = 9999;
     iFrame.setAttribute("align", "middle");
     iFrame.style.margin = "auto";

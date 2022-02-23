@@ -5,5 +5,8 @@ $(document).ready(function () {
         action: "START_SESSION",
       });
     });
+
+    // closing popup
+    window.close();
   });
 });
