@@ -22,20 +22,19 @@ body {
 /* Form */
 input,
 textarea {
-  border: 2px solid rgba(0, 0, 0, 0.6);
+  /* border: 2px solid rgba(0, 0, 0, 0.6); */
   background-image: none;
   background-color: #fdfcfa;
   box-shadow: none;
   padding: 5px;
 }
-input:focus,
-button:focus,
+
 textarea:focus {
-  outline: none;
+  outline: 3px solid #b4cce5 !important;
 }
 
 textarea {
-  min-height: 50px;
+  min-height: 60px;
   resize: vertical;
 }
 
@@ -72,6 +71,9 @@ textarea {
 .qna textarea {
   margin-top: -0.5rem;
 }
+#question {
+  margin-bottom: 0.5rem;
+}
 
 .cancelIcon img {
   width: 15px;
@@ -79,4 +81,10 @@ textarea {
   right: 30px;
   top: 30px;
   cursor: pointer;
+}
+
+.cardOff {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: all !important;
 }
