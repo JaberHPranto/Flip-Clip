@@ -1,0 +1,175 @@
+.container {
+  height: 00px;
+  width: 620px;
+  background-color: yellow;
+}
+#midrow {
+  margin-top: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+}
+
+/* FLASH CARD STYLING */
+
+.container .button-container {
+  text-align: center;
+  /*   margin-top: 10px;   */
+}
+
+.container .button-container button {
+  font-size: 15px;
+}
+
+.container .button-container i {
+  font-size: 25px;
+}
+
+.button-container button {
+  padding: 10px 15px;
+  font-weight: bold;
+  background-color: transparent;
+  border-radius: 5px;
+  color: black;
+}
+
+.button-container {
+  display: block;
+  background: #dbdbdb;
+}
+
+.container button:hover {
+  /* cursor: pointer; */
+}
+
+.container button:focus {
+  outline: 0;
+}
+
+.container button.button-active {
+  /* 	background-color: gray; */
+  /* 	color: #374D57; */
+}
+
+.flag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 51%;
+  border: 0;
+  width: 3em;
+  height: 3em;
+  font-size: 0.5em;
+  color: white;
+  background-color: #337ab7;
+}
+
+.flag:focus {
+  outline: 0;
+}
+
+/* entire container, keeps perspective */
+
+.container .flip-container {
+  margin: 0 auto;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  -ms-transform: perspective(1000px);
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+}
+
+/* flip the pane  */
+.container .flip-container.flipped .flipper,
+.container .flip-container.flipped .flipper {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.container .flip-container,
+.front,
+.back {
+  width: 400px;
+  height: 250px;
+  /* 	border-radius: 24px; */
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 768px) {
+  .flip-container {
+    /* 		margin: 10vh auto; */
+  }
+
+  .flip-container,
+  .front,
+  .back {
+    width: 150vw;
+    height: 80vh;
+  }
+}
+
+.front,
+.back {
+  text-align: center;
+  font-family: "Arvo";
+  font-size: 2.4em;
+  line-height: 1em;
+  padding-top: calc(50% - 3em);
+  color: #ffffff;
+  /* 	border: 1px solid #95A39D; */
+}
+
+/* flip speed goes here */
+.flipper {
+  /* -webkit-transition: 0.2s;
+  -webkit-transform-style: preserve-3d;
+  -ms-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d; */
+  transition: 0.3s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front,
+.back {
+  backface-visibility: hidden;
+  transition: 0.3s;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 10px 10px 16px -1px rgba(163, 163, 163, 0.4);
+  cursor: pointer;
+}
+
+/* front pane, placed above back */
+.front {
+  /* z-index: 2;
+  /* for firefox 31 */
+  /* -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);  */
+  background-color: #337ab7;
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(-180deg);
+  background-color: #2bbe83;
+}
+
+.container .refresh {
+  border: 0;
+}
+
+.container .refresh:hover {
+  border: 0;
+  background-color: transparent;
+}

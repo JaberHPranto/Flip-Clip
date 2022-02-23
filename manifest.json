@@ -15,6 +15,6 @@
       "js": ["jQuery.js", "content.js"]
     }
   ],
-  "web_accessible_resources": ["html/newCardModal.html"],
+  "web_accessible_resources": ["html/newCardModal.html", "html/session.html"],
   "permissions": ["activeTab", "tabs", "storage", "contextMenus"]
 }
