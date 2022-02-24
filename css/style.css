@@ -1,10 +1,134 @@
 body,
 html {
-  width: 300px;
+  width: 350px;
   height: 500px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body iframe {
   margin-left: 3rem;
   display: inline-block;
+}
+body {
+  background-color: #fdfcfa;
+  font-family: "Nunito", sans-serif;
+}
+.title {
+  font-family: "Proza Libre", sans-serif;
+  text-align: center;
+}
+.desc {
+  font-size: 0.9rem;
+  text-align: center;
+}
+.popupBtn {
+  display: flex;
+  justify-content: space-around;
+}
+.popupBtn > * {
+  display: inline-block;
+  outline: none;
+  font-family: "Lato", sans-serif;
+  word-spacing: 2px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16px;
+  padding: 2px 12px;
+  height: 45px;
+  min-width: 100px;
+  min-height: 30px;
+  border: none;
+  color: #fff;
+  background-color: #80a8d2;
+}
+input,
+textarea {
+  /* border: 2px solid rgba(0, 0, 0, 0.6); */
+  background-image: none;
+  background-color: #fdfcfa;
+  box-shadow: none;
+  padding: 5px;
+}
+
+textarea:focus {
+  outline: 3px solid #b4cce5 !important;
+}
+
+textarea {
+  min-height: 50px;
+  resize: none;
+}
+
+.feedback-body__submit {
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  padding: 8px 8px !important;
+  margin-top: 2rem !important;
+  margin-bottom: 0.5rem !important;
+  background-color: #80a8d2;
+  color: white;
+  border-width: 0;
+  border-radius: 5px;
+}
+
+.feedback-body {
+  padding: 0 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.feedback-body__message {
+  margin-top: 10px;
+}
+.feedback-body button {
+  margin-top: 10px;
+  align-self: flex-end;
+}
+
+.qna {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.qna textarea {
+  margin-top: -0.5rem;
+}
+#question {
+  margin-bottom: 0.5rem;
+}
+
+.cancelIcon img {
+  width: 15px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
+}
+
+.cardOff {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+.new-card-info {
+  margin: auto;
+  margin-top: 1.5rem;
+  /* margin-bottom: -0.5rem; */
+  text-align: center;
+  color: #80a8d2;
+  border-bottom: 1px solid #999;
+  padding-bottom: 0.3rem;
+  width: 85%;
+}
+.popup-warning {
+  margin-top: 1rem !important;
+}
+#remainder {
+  color: #80a8d2;
+  font-weight: bold;
+  font-size: 0.9rem;
 }

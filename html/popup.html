@@ -5,13 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito:wght@300;400&family=Proza+Libre&display=swap"
+      rel="stylesheet"
+    />
     <title>Flip Clip</title>
   </head>
   <body>
-    <h1>Flip Clip</h1>
-    A quick way to make flashcards from a web page
+    <h1 class="title">Flip Clip</h1>
+    <p class="desc">A quick way to make flashcards from a web page</p>
 
-    <button id="sessionStartBtn">Start Session</button>
+    <div class="popupBtn">
+      <button id="sessionStartBtn">Start Session</button>
+      <button id="removeCardBtn">Remove All Cards</button>
+    </div>
+
+    <h3 class="new-card-info">Add new card to deck</h3>
+    <div class="new-card-form">
+      <form class="feedback-body">
+        <div class="qna">
+          <h3>Question</h3>
+          <textarea
+            type="text"
+            id="question"
+            class="feedback-body__message"
+            placeholder="Your Question"
+          ></textarea>
+        </div>
+        <div class="qna">
+          <h3>Answer</h3>
+          <textarea
+            type="text"
+            id="answer"
+            class="feedback-body__message"
+            placeholder="Your answer"
+          ></textarea>
+        </div>
+        <button class="feedback-body__submit cardOff" id="newCardBtn">
+          Create New Card
+        </button>
+        <p class="popup-waring">
+          <strong>*Note: </strong>Please note that you can have at-most 10
+          cards. You can create <span id="remainder">4</span> more cards
+        </p>
+      </form>
+    </div>
 
     <!-- Scripts -->
     <script src="../jQuery.js"></script>
