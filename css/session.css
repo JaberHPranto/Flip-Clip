@@ -10,15 +10,6 @@
   margin-bottom: auto;
 }
 
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
 /* FLASH CARD STYLING */
 
 .container .button-container {
@@ -114,13 +105,21 @@
   box-sizing: border-box;
 }
 
-.test {
-  animation: 1s ease-out 0s 1 slideInFromLeft;
+/* @keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
+
+.anime {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+} */
 
 .front,
 .back {
-  animation: 1s ease-out 0s 1 slideInFromLeft;
   text-align: center;
   font-family: "Arvo";
   font-size: 2.4em;
@@ -217,4 +216,23 @@
 .container .refresh:hover {
   border: 0;
   background-color: transparent;
+}
+
+/* Animation */
+
+@keyframes rotate-out-2-br-cw {
+  0% {
+    transform: rotate(0);
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+    opacity: 0;
+  }
+}
+
+.flip-out-anime {
+  animation: rotate-out-2-br-cw 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }

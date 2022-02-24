@@ -20,13 +20,13 @@ $(document).ready(function () {
   $("#knowBtn").click(function () {
     console.log("clicked");
     cardNo = cardNo + 1;
-    $("#flashcard").addClass("test");
+    $("#flashcard").addClass("flip-out-anime");
     getNextCard(cardNo);
   });
 
   // reset animation
   function resetCard() {
-    $("#flashcard").removeClass("test");
+    $("#flashcard").removeClass("flip-out-anime");
   }
 
   // getting cards from local storage
