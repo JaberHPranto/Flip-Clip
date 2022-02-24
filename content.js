@@ -10,6 +10,12 @@ $(document).ready(function () {
       startNewSession();
     } else if (message.action === "END_SESSION") {
       $("#sessionFrame").remove();
+    } else if (message.action === "GET_CARDS") {
+      chrome.storage.sync.get(["cards"], function (result) {
+        if (result && result.cards) {
+          sendResponse(result.cards);
+        } else sendResponse([]);
+      });
     }
 
     return true;

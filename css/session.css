@@ -10,6 +10,15 @@
   margin-bottom: auto;
 }
 
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 /* FLASH CARD STYLING */
 
 .container .button-container {
@@ -105,8 +114,13 @@
   box-sizing: border-box;
 }
 
+.test {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
 .front,
 .back {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
   text-align: center;
   font-family: "Arvo";
   font-size: 2.4em;
