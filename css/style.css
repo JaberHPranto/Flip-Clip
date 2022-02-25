@@ -132,3 +132,14 @@ textarea {
   font-weight: bold;
   font-size: 0.9rem;
 }
+
+#popup-remainder {
+  display: flex;
+  gap: 3px;
+  margin: -0.5rem 0;
+}
+#popup-remainder p {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #f88379;
+}

@@ -4,7 +4,6 @@ $(document).ready(function () {
   // creating new card
   chrome.storage.sync.get(["message"], function (result) {
     if (result) {
-      console.log(result);
       // for question
       if (result.message.itemId === "cardFront") {
         $("#question").val(sanitizeString(result.message.text));
@@ -53,6 +52,7 @@ $(document).ready(function () {
 
       cards.push(card);
       saveToStorage(cards);
+      resetTextarea();
     });
   });
 
@@ -83,8 +83,13 @@ $(document).ready(function () {
     return "_" + Math.random().toString(36).substr(2, 9);
   }
 
+  function resetTextarea() {
+    $("#question").val("");
+    $("#answer").val("");
+  }
+
   // just for testing -- will remove later
-  getFromStorage(function (cards) {
-    console.log(cards);
-  });
+  // getFromStorage(function (cards) {
+  //   console.log(cards);
+  // });
 });
