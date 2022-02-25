@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/session.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito:wght@300;400&family=Proza+Libre&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
   <body>
@@ -18,8 +22,7 @@
             <div class="front">
               <div class="cardFront">
                 <span id="flashcard--content_front">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-                  perspiciatis totam atque esse, minima
+                  This is a sample card question
                 </span>
               </div>
               <div class="front-card-btn">
@@ -29,7 +32,9 @@
             </div>
             <div class="back">
               <div class="cardBack">
-                <span id="flashcard--content_back">This is not almonds</span>
+                <span id="flashcard--content_back"
+                  >This is a sample card answer</span
+                >
               </div>
               <div class="front-card-btn">
                 <button id="incorrectBtn">Incorrect</button>
@@ -38,6 +43,33 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="session-end-container">
+        <div class="end-image">
+          <img src="../images/sessionEnds.svg" alt="session" />
+        </div>
+        <h1 class="session-heading">
+          Your session has completed. Keep up the good work
+        </h1>
+        <div class="score">
+          <div class="correct">
+            <img src="../images/correct.png" class="score-img" alt="correct" />
+            <p>Correct</p>
+            <span>2/2</span>
+          </div>
+          <div class="wrong">
+            <img src="../images/wrong.png" class="score-img" alt="correct" />
+            <p>Incorrect</p>
+            <span>2/2</span>
+          </div>
+          <div class="forget">
+            <img src="../images/forget.png" class="score-img" alt="correct" />
+            <p>Forget</p>
+            <span>2/2</span>
+          </div>
+        </div>
+        <button class="finishBtn">Finish Session</button>
       </div>
     </div>
 

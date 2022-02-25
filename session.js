@@ -1,14 +1,17 @@
 $(document).ready(function () {
   var cardNo = 0;
+  $("#midrow").hide();
   // cancel session
-  $(".flag").click(function () {
-    console.log("clicked");
+  $(".flag").click(endSession);
+  $(".finishBtn").click(endSession);
+
+  function endSession() {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
       chrome.tabs.sendMessage(tabs[0].id, {
         action: "END_SESSION",
       });
     });
-  });
+  }
 
   //flipping the card
   // $("#flashcard").click(function () {

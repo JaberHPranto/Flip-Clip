@@ -1,5 +1,5 @@
 .container {
-  height: 50vh;
+  height: 80vh;
   width: 100%;
   /* background-color: yellow; */
 }
@@ -166,6 +166,7 @@
   cursor: pointer;
   border-radius: 3px;
   font-size: 18px;
+  font-family: "Lato";
   font-weight: 500;
   line-height: 16px;
   padding: 2px 16px;
@@ -218,6 +219,11 @@
   background-color: transparent;
 }
 
+#flashcard--content_front,
+#flashcard--content_back {
+  font-family: "Nunito", sans-serif;
+}
+
 /* Animation */
 
 @keyframes rotate-out-2-br-cw {
@@ -235,4 +241,62 @@
 
 .flip-out-anime {
   animation: rotate-out-2-br-cw 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Session End Container */
+.session-end-container {
+  background-color: #fdfcfa;
+  width: 50%;
+  height: 92%;
+  margin: auto;
+  margin-top: 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.end-image {
+  width: 200px;
+  margin-top: -3rem;
+}
+.score {
+  display: flex;
+}
+.session-heading {
+  font-family: "Nunito";
+  margin-bottom: 1.5rem;
+}
+.score-img {
+  width: 50px;
+}
+.score > * {
+  padding: 1rem 2rem;
+  border: 1px solid #999;
+  font-family: "Lato", sans-serif;
+  color: #555;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.correct span,
+.wrong span,
+.forget span {
+  margin-top: -0.5rem;
+  font-family: "Proza Libre", sans-serif;
+  font-weight: bold;
+  color: #222;
+}
+.finishBtn {
+  cursor: pointer;
+  font-weight: bold;
+  width: 20%;
+  padding: 8px 8px !important;
+  margin-top: 2rem !important;
+  margin-bottom: 0.5rem !important;
+  background-color: #80a8d2;
+  color: white;
+  border-width: 0;
+  border-radius: 5px;
 }
