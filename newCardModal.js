@@ -1,5 +1,6 @@
 $(document).ready(function () {
   let pageUrl;
+  let numberOfCards;
   $("#newCardBtn").attr("disabled", true);
   // creating new card
   chrome.storage.sync.get(["message"], function (result) {
@@ -19,7 +20,8 @@ $(document).ready(function () {
   function checkStatus() {
     var q = $("#question").val();
     var ans = $("#answer").val();
-    if (q != "" && ans != "") {
+
+    if (q != "" && ans != "" && numberOfCards <= 10) {
       $("#newCardBtn").attr("disabled", false);
       $("#newCardBtn").removeClass("cardOff");
     } else {
@@ -29,20 +31,23 @@ $(document).ready(function () {
   }
   $(document).on("input", "textarea", checkStatus);
 
-  $("#cancelBtn").click(function () {
+  $("#cancelBtn").click(removeModal);
+
+  // cancel cardModal
+  function removeModal() {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
       chrome.tabs.sendMessage(tabs[0].id, {
         action: "REMOVE_CARD",
       });
     });
-  });
+  }
 
   // handle card creation
   $("#newCardBtn").click(function () {
     getFromStorage(function (cards) {
-      console.log(cards);
       const question = sanitizeString($("#question").val());
       const answer = sanitizeString($("#answer").val());
+
       const card = {
         id: getID(),
         question,
@@ -53,6 +58,7 @@ $(document).ready(function () {
       cards.push(card);
       saveToStorage(cards);
       resetTextarea();
+      removeModal();
     });
   });
 
@@ -83,10 +89,18 @@ $(document).ready(function () {
     return "_" + Math.random().toString(36).substr(2, 9);
   }
 
+  function onLoad() {
+    resetTextarea();
+    getFromStorage(function (cards) {
+      numberOfCards = cards.length;
+    });
+  }
   function resetTextarea() {
     $("#question").val("");
     $("#answer").val("");
   }
+
+  onLoad();
 
   // just for testing -- will remove later
   // getFromStorage(function (cards) {

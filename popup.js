@@ -10,6 +10,15 @@ $(document).ready(function () {
     window.close();
   });
 
+  $("#removeCardBtn").click(function () {
+    if (confirmCancel()) {
+      chrome.storage.sync.set({ cards: [] }, function () {
+        console.log("all cards removed");
+      });
+      window.close();
+    }
+  });
+
   // getting data from local storage
   function onLoad() {
     resetTextarea();
@@ -37,28 +46,20 @@ $(document).ready(function () {
     });
   }
 
-  function saveToStorage(cards, cb) {
-    chrome.storage.sync.set({ cards }, function () {
-      console.log("card added");
-    });
-  }
-
-  // sanitizing input
-  function sanitizeString(str) {
-    str = str.replace(/[^a-z0-9 \.,_-]/gim, "");
-    return str.trim();
-  }
-
-  // generate unique id
-  function getID() {
-    console.log(Math.random().toString(36));
-    return "_" + Math.random().toString(36).substr(2, 9);
-  }
-
   // reset text area
   function resetTextarea() {
     $("#question").val("");
-    $("#answer").val("");
+    $("answer").val("");
+  }
+
+  function confirmCancel() {
+    if (
+      window.confirm(
+        "The action will remove all cards from deck.Are you sure ?"
+      )
+    ) {
+      return true;
+    } else return false;
   }
 
   // initial call
