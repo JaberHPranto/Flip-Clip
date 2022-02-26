@@ -3,7 +3,14 @@
   "name": "Flip Clip",
   "version": "1.0.0",
   "description": "A quick option for making flashcards from a web page ",
+  "icons": {
+    "128": "./images/icons/card-128_x_128.png",
+    "48": "./images/icons/card-48_x_48.png",
+    "32": "./images/icons/card-32_x_32.png",
+    "16": "./images/icons/card-16_x_16.png"
+  },
   "browser_action": {
+    "default_icon": "./images/icons/card-16_x_16.png",
     "default_popup": "html/popup.html"
   },
   "background": {
