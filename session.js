@@ -1,6 +1,13 @@
 $(document).ready(function () {
   var cardNo = 0;
-  $("#midrow").hide();
+  var numberOfCards;
+  let numberOfCorrect = 0;
+  let numberOfIncorrect = 0;
+  let numberOfForget = 0;
+
+  // hide end screen
+  $(".session-end-container").hide();
+
   // cancel session
   $(".flag").click(endSession);
   $(".finishBtn").click(endSession);
@@ -13,23 +20,48 @@ $(document).ready(function () {
     });
   }
 
-  //flipping the card
-  // $("#flashcard").click(function () {
-  //   $(this).toggleClass("flipped");
-  //   console.log("clicked");
-  // });
-
-  // session
+  //button click events
   $("#knowBtn").click(function () {
-    console.log("clicked");
-    cardNo = cardNo + 1;
-    $("#flashcard").addClass("flip-out-anime");
-    getNextCard(cardNo);
+    $("#flashcard").addClass("flipped");
+  });
+
+  $("#forgetBtn").click(function () {
+    $("#flashcard").addClass("flipped");
+    numberOfForget++;
+  });
+
+  $("#correctBtn").click(function () {
+    if (cardNo === numberOfCards - 1) {
+      numberOfCorrect++;
+      setStats();
+      $("#flashcard-container").hide();
+      $(".session-end-container").show();
+    } else {
+      cardNo = cardNo + 1;
+      numberOfCorrect++;
+      $("#flashcard").addClass("flip-out-anime");
+      getNextCard(cardNo);
+    }
+  });
+
+  $("#incorrectBtn").click(function () {
+    if (cardNo === numberOfCards - 1) {
+      numberOfIncorrect++;
+      setStats();
+      $("#flashcard-container").hide();
+      $(".session-end-container").show();
+    } else {
+      cardNo = cardNo + 1;
+      numberOfIncorrect++;
+      $("#flashcard").addClass("flip-out-anime");
+      getNextCard(cardNo);
+    }
   });
 
   // reset animation
   function resetCard() {
     $("#flashcard").removeClass("flip-out-anime");
+    $("#flashcard").removeClass("flipped");
   }
 
   // getting cards from local storage
@@ -47,23 +79,25 @@ $(document).ready(function () {
     getFromStorage(function (cards) {
       if (cards && cards.length !== 0) {
         allCards = cards;
+        numberOfCards = cards.length;
         console.log(cards);
         getNextCard(0);
       }
     });
   }
 
-  // console.log(allCards);
-
   function getNextCard(cardNumber) {
-    // console.log(cardNo);
-    // console.log(allCards);
     $("#flashcard--content_front").text(allCards[cardNumber]?.question);
     $("#flashcard--content_back").text(allCards[cardNumber]?.answer);
-    // $("#flashcard").removeClass("test");
     window.setTimeout(() => {
       resetCard();
     }, 1000);
+  }
+
+  function setStats() {
+    $(".correct").append(`<span>${numberOfCorrect}/${numberOfCards}</span>`);
+    $(".wrong").append(`<span>${numberOfIncorrect}/${numberOfCards}</span>`);
+    $(".forget").append(`<span>${numberOfForget}/${numberOfCards}</span>`);
   }
 
   // initial call
